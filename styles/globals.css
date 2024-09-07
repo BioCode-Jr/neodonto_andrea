@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('/fonts/TT_Norms_Pro_Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('/fonts/TT_Norms_Pro_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('/fonts/TT_Norms_Pro_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('/fonts/TT_Norms_Pro_ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+
+:root {
+  --background: #ffffff;
+}
+
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  font-family: 'TT Norms Pro', sans-serif;
 }
