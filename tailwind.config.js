@@ -14,6 +14,11 @@ module.exports = {
         'pink-400': '#a6566b',
         'pink-300': '#d59195',
         'pink-200': '#e6b9b9',
+        'pink-grad-40': '#A7556B',
+        'pink-grad-30': '#B75E76',
+        'pink-grad-20': '#CD7089',
+        'pink-grad-10': '#E18AA2',
+        'pink-grad-05': '#f093ac',
         'light-pink': '#f2dce0',
       },
       fontFamily: {
