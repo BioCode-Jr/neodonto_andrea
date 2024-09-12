@@ -2,6 +2,7 @@ import React from 'react'
 
 const Button = ({
   label,
+  secondLabel,
   onClick,
   icon,
   type,
@@ -24,8 +25,9 @@ const Button = ({
   }
 
   const variants = {
-    primary: 'bg-white text-dark-pink hover:bg-light-pink',
-    secondary: 'bg-dark-pink text-white hover:bg-pink-400',
+    primary:
+      'bg-white text-dark-pink hover:bg-light-pink rounded-full font-semibold',
+    secondary: 'bg-dark-pink text-white hover:bg-pink-400 rounded-full',
     grid: bgColorGrid('grid', column),
   }
 
@@ -36,12 +38,19 @@ const Button = ({
         variants[variant]
           ? variants[variant]
           : 'bg-white text-dark-pink hover:bg-light-pink'
-      } font-medium py-2 px-8 shadow-md rounded-full gap-3 flex items-center justify-center`}
+      }  py-2 px-8 shadow-md gap-3 flex items-center justify-center text-2xl`}
       type={type}
       disabled={disabled}
     >
       {icon && icon}
-      {label}
+      <div className='flex flex-col items-center w-full justify-center '>
+        <span>{label}</span>
+        {secondLabel && (
+          <span className='underline underline-offset-2 font-semibold'>
+            {secondLabel}
+          </span>
+        )}
+      </div>
     </button>
   )
 }

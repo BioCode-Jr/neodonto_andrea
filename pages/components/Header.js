@@ -24,7 +24,7 @@ const Header = () => {
               className='hover:underline hover:underline-offset-8 hover:text-dark-pink hover:decoration-2'
             >
               <Link href={item.href}>
-                <span className='text-pink-400 hover:text-dark-pink font-medium '>
+                <span className='text-pink-400 hover:text-dark-pink font-semibold '>
                   {item.label}
                 </span>
               </Link>
