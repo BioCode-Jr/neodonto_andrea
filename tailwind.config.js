@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       colors: {
         background: 'var(--background)',
+        'darker-pink': '#590825',
         'dark-pink': '#8c0d3b',
         'pink-400': '#a6566b',
         'pink-300': '#d59195',
@@ -70,8 +71,17 @@ module.exports = {
         288: '72rem',
         304: '76rem',
       },
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '2.5rem',
+        '6xl': '3rem',
+        '7xl': '3.5rem',
+        '8xl': '4rem',
+        '9xl': '4.5rem',
+      },
       backgroundImage: {
         'border-white': "url('/background/border-white.svg')",
+        'border-white-2': "url('/background/border-white-2.svg')",
         'border-light-pink': "url('/background/border-light-pink.svg')",
         'home-image': "url('/images/home-image.png')",
         'andrea-photo': "url('/images/andrea-photo.png')",
