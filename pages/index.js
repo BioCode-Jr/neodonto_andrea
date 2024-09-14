@@ -31,15 +31,34 @@ export default function Home() {
         />
       ),
       modalContent: (
-        <div>
-          Você já pensou em ter dentes mais brancos? No meu consultório,
-          oferecemos dois tipos de clareamento dentário: o caseiro e o
-          profissional. No procedimento caseiro, é feito uma moldeira de
-          silicone transparente , a partir de moldes do seu dente, para
-          aplicação do gel clareador em casa. Já o clareamento profissional
-          é realizado totalmente pelo cirurgião-dentista. Seja qual for o
-          método, a garantia de dentes branquinhos é a mesma!
-        </div>
+        <>
+          <div className='flex flex-col justify-center items-center text-wrap text-xl gap-10 px-10'>
+            <p className='text-center'>
+              Você já pensou em ter dentes{' '}
+              <b className='text-dark-pink'>mais brancos</b>?
+            </p>
+            <p className='text-center'>
+              No meu consultório, oferecemos dois tipos de clareamento
+              dentário: o <b className='text-dark-pink'>caseiro</b> e o{' '}
+              <b className='text-dark-pink'>profissional</b>. No
+              procedimento caseiro, é feito uma moldeira de silicone
+              transparente , a partir de moldes do seu dente, para
+              aplicação do gel clareador em casa. Já o clareamento
+              profissional é realizado totalmente pelo cirurgião-dentista.
+            </p>
+            <b className='text-center text-dark-pink '>
+              Seja qual for o método, a garantia de dentes branquinhos é a
+              mesma!
+            </b>
+          </div>
+
+          <Image
+            src='/images/procedimentos/clareamento.png'
+            width={1000}
+            height={400}
+            alt='Clareamento Dentário'
+          />
+        </>
       ),
     },
     {
@@ -457,7 +476,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className='bg-border-white bg-no-repeat h-40 w-full absolute bottom-0 right-0 bg-cover'></div>
+            <div className='bg-border-white bg-no-repeat h-40 w-full absolute -bottom-3 right-0 bg-cover'></div>
           </div>
 
           <div className='flex flex-col relative items-center gap-16 w-full min-h-160 bg-white pt-20 pb-52 px-40 '>
@@ -528,7 +547,7 @@ export default function Home() {
           className='flex relative justify-end w-full min-h-160 bg-light-pink px-40 pb-20 '
           id='sobre'
         >
-          <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
+          <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
           <div className=' absolute -left-20 -top-24 bg-dark-pink rounded-full'>
             <Image
               src='/images/andrea-photo.png'
@@ -576,7 +595,7 @@ export default function Home() {
         >
           <div className='bg-border-white-2 bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
 
-          <div className='grid grid-cols-4 gap-8 w-full min-h-160 bg-white pt-20 pb-52 px-40'>
+          <div className='bg-white flex flex-wrap gap-16 justify-center px-40 py-20'>
             {procedimentos.map((procedimento, index) => (
               <Button
                 key={index}

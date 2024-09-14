@@ -20,7 +20,7 @@ const Button = ({
 
     const key = `${variant}-${row}`
     return (
-      `${bgColorMap[key]} text-white rounded-9xl py-2 px-5 h-64 w-64 flex-col hover` ||
+      `${bgColorMap[key]} text-white rounded-9xl py-2 px-5  box-border aspect-w-1 aspect-h-1 w-56 h-56 flex-col ` ||
       ''
     )
   }
@@ -47,7 +47,7 @@ const Button = ({
     >
       {icon && icon}
       {label && (
-        <div className='flex flex-col items-center w-full justify-center '>
+        <div className='flex flex-col items-center w-full justify-center'>
           <span>{label}</span>
           {secondLabel && (
             <span className='underline underline-offset-2 font-semibold'>
