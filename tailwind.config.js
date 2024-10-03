@@ -41,6 +41,12 @@ module.exports = {
         288: '72rem',
         304: '76rem',
       },
+      maxHeight: {
+        '2xl': '42rem',
+        '3xl': '48rem',
+        '4xl': '56rem',
+        '5xl': '64rem',
+      },
       minHeight: {
         104: '28rem',
         128: '32rem',
@@ -95,5 +101,25 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.custom-scrollbar': {
+          'scrollbar-width': 'thin',
+          'scrollbar-color': '#8c0d3b #f3f4f6',
+          '&::-webkit-scrollbar': {
+            width: '8px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            'background-color': '#8c0d3b',
+            'border-radius': '10px',
+          },
+          '&::-webkit-scrollbar-track': {
+            background: '#f3f4f6',
+            'border-radius': '10px',
+          },
+        },
+      })
+    },
+  ],
 }
