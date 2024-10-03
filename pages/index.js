@@ -6,9 +6,9 @@ import Image from 'next/image'
 import { WhatsApp } from '@mui/icons-material'
 import Modal from './components/Modal'
 import { useState } from 'react'
+import Carousel from './components/Carousel/Carousel'
 
 export default function Home() {
-  const [isModalOpen, setModalOpen] = useState(false)
   const [activeModal, setActiveModal] = useState(null)
 
   const handleOpenModal = index => {
@@ -429,6 +429,25 @@ export default function Home() {
     },
   ]
 
+  const carouselItemsImages = [
+    { url: '/images/home-image.png' },
+    { url: '/images/home-image.png' },
+    { url: '/images/home-image.png' },
+    { url: '/images/home-image.png' },
+    { url: '/images/home-image.png' },
+    { url: '/images/home-image.png' },
+  ]
+
+  const feedbacks = [
+    {
+      paciente: 'Maria da Silva',
+      feedback:
+        'Excelente profissional, atenciosa e dedicada. Recomendo a todos!',
+      image: '/images/paciente-1.jpg',
+      tempoPaciente: '20 anos',
+    },
+  ]
+
   return (
     <>
       <Head>
@@ -602,6 +621,22 @@ export default function Home() {
                 </Modal>
               )
           )}
+        </section>
+
+        {/* Galeria de Sorrisos */}
+
+        <section className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-40 py-20 pb-40 relative'>
+          <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
+          <Title title={'Galeria de Sorrisos'} />
+          <Carousel slides={carouselItemsImages} variant='image' />
+        </section>
+
+        {/* Depoimentos */}
+
+        <section className='flex flex-col justify-center w-full min-h-160 bg-white gap-10 px-40 py-20 pb-20 relative'>
+          <div className='bg-border-white bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
+          <Title title={'Galeria de Sorrisos'} />
+          <Carousel slides={carouselItemsImages} variant='feedback' />
         </section>
       </main>
     </>

@@ -30,7 +30,8 @@ const Button = ({
       'bg-white text-dark-pink hover:bg-pink-200 rounded-full font-semibold  py-2 px-8 ',
     secondary:
       'bg-dark-pink text-white hover:bg-darker-pink rounded-full py-2 px-8 ',
-    icon: 'bg-white text-dark-pink hover:bg-pink-200 rounded-full p-2',
+    iconPink: 'bg-dark-pink text-white hover:bg-pink-200 p-1',
+    iconWhite: 'bg-white text-dark-pink hover:bg-pink-200 p-1',
     grid: bgColorGrid('grid', row),
   }
 
