@@ -459,11 +459,25 @@ export default function Home() {
 
   const feedbacks = [
     {
+      paciente: 'Moacir Martins',
+      feedback:
+        'Me lembro como fosse ontem, tudo começou com um dente quebrado e minha dentista não realizando implante indicou o consultório da dra. Andréa, que prontamente marcou uma consulta para avaliação. Fui recepcionado por sua equipe de atendimento com uma simpatia que me deixou logo bem a vontade para discorrer sobre meu problema. Com a Dra. recebi outro atendimento, muito profissional e cordial, num ambiente extremamente limpo e delicado, muito bem decorado com suas cores prediletas e com poder de relaxamento e segurança. Após esse tratamento e quase com alta, uma azeitona com caroço se atravessou na minha vida, mais precisamente na minha boca, quebrando outro dente. Quis o destino já estar sendo atendido pela dra. Andréa, iniciou aí uma relação profissional que me fez sentir muito seguro nas suas mãos, hoje já se passaram três anos, que eu frequento seu consultório, carregando toda a família pra ser seus pacientes. Agradeço muito à dra. Andréa pelo excelente trabalho nos meus dentes e de não deixar faltar nenhum espaço entre os dentes originais, mantendo esse sorriso que muitos me reconhecem e eu faço questão de usá-lo.Sou grato e super indico seus serviços, seguros, atualizados e comprometidos com o bem estar do seu paciente, além de uma pessoa afável e muito simpática de conviver.',
+      image: '/images/paciente-1.jpg',
+      inicioPaciente: '2010',
+    },
+    {
+      paciente: 'Ana Amélia de Vargas',
+      feedback:
+        'Fui procurar a Dra Andrea, depois de entender, o quanto os dentes estão correlacionadas com o todo. Eu  tinha uma sensibilidade ao correr, quando  fazia alguma atividade física. Fui em alguns dentistas convencionais, e eles me disseram que eu não tinha nada.Como não ter nada, se tu sente algo diferente? Então, a Dra Andréa começou meus tratamentos e a sensibilidade desapareceu! Eu brinco com ela que a minha boca é “uma caixinha de surpresas “, porque ela sempre acha alguma coisinha! Amo trabalho da Dra, não só o seu profissionalismo, mas também a pessoa maravilhosa que ela é.',
+      image: '/images/paciente-1.jpg',
+      inicioPaciente: '2010',
+    },
+    {
       paciente: 'Maria da Silva',
       feedback:
         'Excelente profissional, atenciosa e dedicada. Recomendo a todos!',
       image: '/images/paciente-1.jpg',
-      tempoPaciente: '20 anos',
+      inicioPaciente: '2010',
     },
   ]
 
@@ -654,8 +668,8 @@ export default function Home() {
 
         <section className='flex flex-col justify-center w-full min-h-160 bg-white gap-10 px-40 py-20 pb-20 relative'>
           <div className='bg-border-white bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
-          <Title title={'Galeria de Sorrisos'} />
-          <Carousel slides={carouselItemsImages} variant='feedback' />
+
+          <Carousel slides={feedbacks} variant='feedback' />
         </section>
       </main>
     </>
