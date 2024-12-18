@@ -15,6 +15,7 @@ module.exports = {
         'pink-400': '#a6566b',
         'pink-300': '#d59195',
         'pink-200': '#e6b9b9',
+        'pink-100': '#f3d4d8',
         'pink-grad-40': '#A7556B',
         'pink-grad-30': '#B75E76',
         'pink-grad-20': '#CD7089',

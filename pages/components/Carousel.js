@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Button from '../Button'
+import Button from './Button'
 import { ArrowBack, ArrowForward, Star } from '@mui/icons-material'
 import Image from 'next/image'
 
@@ -17,10 +17,12 @@ const Carousel = ({ slides, variant }) => {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 4000)
-    return () => clearInterval(interval)
+    if (variant === 'image') {
+      const interval = setInterval(() => {
+        nextSlide()
+      }, 5000)
+      return () => clearInterval(interval)
+    }
   }, [currentIndex])
 
   return (
@@ -33,7 +35,7 @@ const Carousel = ({ slides, variant }) => {
             transform:
               variant === 'image'
                 ? `translateX(-${(currentIndex - 1) * 33.33}%)`
-                : `translateX(-${currentIndex * 100}%)`, // 100% de transição por vez para feedback
+                : `translateX(-${currentIndex * 100}%)`,
           }}
         >
           {variant === 'image'
@@ -70,11 +72,11 @@ const Carousel = ({ slides, variant }) => {
                     <div className='flex bg-white rounded-4xl w-full h-full p-8 gap-6 flex-col gap'>
                       <div className='flex items-center justify-center gap-5'>
                         <Image
-                          src={slide.url}
+                          src={slide.image}
                           width={100}
                           height={100}
                           alt={`Paciente ${index + 1}`}
-                          className='rounded-full border-4 border-dark-pink'
+                          className='rounded-full border-4 border-dark-pink '
                         />
                         <div className='flex flex-col gap-1'>
                           <p className='text-black text-3xl font-semibold'>
@@ -93,19 +95,22 @@ const Carousel = ({ slides, variant }) => {
                         </div>
                       </div>
 
-                      <p className='flex fletext-gray-600'>
+                      <p className='relative text-gray-600'>
                         <Image
                           src={'/images/quote.svg'}
                           width={30}
                           height={30}
                           alt={`Paciente ${index + 1}`}
+                          className='absolute -top-2 -left-2'
                         />
-                        {slide.feedback}{' '}
+                        <span className='block text-justify text-lg pl-8 pr-8'>
+                          {slide.feedback}
+                        </span>
                         <Image
                           src={'/images/quote.svg'}
                           width={30}
                           height={30}
-                          className='transform '
+                          className='absolute transform rotate-180 bottom-0 right-0'
                           alt={`Paciente ${index + 1}`}
                         />
                       </p>
