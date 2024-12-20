@@ -10,6 +10,7 @@ import Carousel from './components/Carousel'
 import feedbacks from '@/services/feedbacks'
 import Link from 'next/link'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsappButton'
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState(null)
@@ -798,7 +799,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        <WhatsAppButton />
         {/* Footer */}
 
         <Footer />

@@ -47,7 +47,7 @@ const Footer = () => {
             <span className='font-bold text-3xl '>Redes Sociais</span>
             <div className='flex gap-5'>
               <Link href='https://wa.me/5551989016197' target='_blank'>
-                <div className='bg-white rounded-full p-2 box-border'>
+                <div className='bg-white rounded-full p-2 box-border hover:bg-gray-200'>
                   <WhatsApp
                     fontSize='large'
                     sx={{ color: '#8c0d3b', fontSize: '40px' }}
@@ -58,7 +58,7 @@ const Footer = () => {
                 href='https://www.instagram.com/andrea.vieira.machado/'
                 target='_blank'
               >
-                <div className='bg-white rounded-full p-2 box-border'>
+                <div className='bg-white rounded-full p-2 box-border  hover:bg-gray-200'>
                   <Instagram
                     fontSize='large'
                     sx={{ color: '#8c0d3b', fontSize: '40px' }}
@@ -69,7 +69,7 @@ const Footer = () => {
                 href='https://www.instagram.com/andrea.vieira.machado/'
                 target='_blank'
               >
-                <div className='bg-white rounded-full p-2 box-border'>
+                <div className='bg-white rounded-full p-2 box-border  hover:bg-gray-200'>
                   <LinkedIn
                     fontSize='large'
                     sx={{ color: '#8c0d3b', fontSize: '40px' }}
@@ -80,7 +80,7 @@ const Footer = () => {
                 href='https://www.instagram.com/andrea.vieira.machado/'
                 target='_blank'
               >
-                <div className='bg-white rounded-full p-2 box-border'>
+                <div className='bg-white rounded-full p-2 box-border  hover:bg-gray-200'>
                   <YouTube
                     fontSize='large'
                     sx={{ color: '#8c0d3b', fontSize: '40px' }}
