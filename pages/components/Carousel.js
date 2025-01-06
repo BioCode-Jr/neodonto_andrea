@@ -42,10 +42,10 @@ const Carousel = ({ slides, variant }) => {
             ? slides.map((slide, index) => (
                 <div
                   key={index}
-                  className={`min-w-[33.33%] px-2 transition-opacity duration-700 ease-in-out ${
+                  className={`px-2 transition-opacity duration-700 ease-in-out ${
                     index === currentIndex
-                      ? 'scale-100 opacity-100'
-                      : 'scale-90 opacity-50'
+                      ? 'min-w-[40%] scale-100 opacity-100'
+                      : 'min-w-[33.33%] scale-90 opacity-50'
                   }`}
                 >
                   <Image

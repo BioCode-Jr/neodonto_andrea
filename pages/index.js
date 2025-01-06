@@ -11,6 +11,7 @@ import feedbacks from '@/services/feedbacks'
 import Link from 'next/link'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsappButton'
+import { procedimentos } from '@/services/procedimentos'
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState(null)
@@ -23,443 +24,13 @@ export default function Home() {
     setActiveModal(null)
   }
 
-  const procedimentos = [
-    {
-      label: 'Clareamento Dentário',
-      icon: (
-        <Image
-          src='/images/procedimentos/dentario.svg'
-          width={100}
-          height={100}
-          alt='Clareamento Dentário'
-        />
-      ),
-      modalContent: (
-        <>
-          <div className='flex flex-col justify-center items-center text-wrap text-xl gap-10 px-10'>
-            <p className='text-center'>
-              Você já pensou em ter dentes{' '}
-              <b className='text-dark-pink'>mais brancos</b>?
-            </p>
-            <p className='text-center'>
-              No meu consultório, oferecemos dois tipos de clareamento
-              dentário: o <b className='text-dark-pink'>caseiro</b> e o{' '}
-              <b className='text-dark-pink'>profissional</b>. No
-              procedimento caseiro, é feito uma moldeira de silicone
-              transparente , a partir de moldes do seu dente, para
-              aplicação do gel clareador em casa. Já o clareamento
-              profissional é realizado totalmente pelo cirurgião-dentista.
-            </p>
-            <b className='text-center text-dark-pink '>
-              Seja qual for o método, a garantia de dentes branquinhos é a
-              mesma!
-            </b>
-          </div>
+  const ondeAtendemos = Array.from({ length: 5 }, (_, i) => ({
+    url: `/images/ondeAtendemos/image${i + 1}.png`,
+  }))
 
-          <Image
-            src='/images/procedimentos/clareamento.png'
-            width={1000}
-            height={400}
-            alt='Clareamento Dentário'
-          />
-        </>
-      ),
-    },
-    {
-      label: 'Tratamento Periodontal',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Laserterapia e Ozonioterapia',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: ' Prótese Fixa, Removível e Total',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Prótese sobre Implante',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Lentes e Facetas de Porcelana',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Enxertos Ósseos',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Restaurações Estéticas',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Extrações Dentárias',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Enxerto de Tecido Mole',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Remoção Segura de Amálgama',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-    {
-      label: 'Cirurgias Periodontais Estéticas',
-      icon: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-      modal: (
-        <svg
-          width='100px'
-          height='100px'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
-            d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-            fill='#fff'
-          />
-        </svg>
-      ),
-    },
-  ]
-
-  const carouselItemsImages = [
-    { url: '/images/home-image.png' },
-    { url: '/images/home-image.png' },
-    { url: '/images/home-image.png' },
-    { url: '/images/home-image.png' },
-    { url: '/images/home-image.png' },
-    { url: '/images/home-image.png' },
-  ]
+  const galeriaSorrisos = Array.from({ length: 23 }, (_, i) => ({
+    url: `/images/galeriaSorrisos/image${i + 1}.png`,
+  }))
 
   return (
     <>
@@ -639,9 +210,9 @@ export default function Home() {
         {/* Galeria de Sorrisos */}
 
         <section className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-40 py-20 pb-40 relative'>
-          <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
+          <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-32 right-0 bg-cover' />
           <Title title={'Galeria de Sorrisos'} />
-          <Carousel slides={carouselItemsImages} variant='image' />
+          <Carousel slides={galeriaSorrisos} variant='image' />
         </section>
 
         {/* Depoimentos */}
@@ -668,7 +239,9 @@ export default function Home() {
                   clínica, siga nossa página no Instagram!
                 </span>
                 <Link
-                  href={'linkInstagram'}
+                  href={
+                    'https://www.instagram.com/draandreavieiramartins?igsh=b3RzY3phNWNwcnpt'
+                  }
                   target='_blank'
                   className='text-darker-pink text-3xl underline underline-offset-8'
                 >
@@ -730,7 +303,9 @@ export default function Home() {
                   as inovações da clínica!
                 </span>
                 <Link
-                  href={'linkInstagram'}
+                  href={
+                    'https://www.instagram.com/draandreavieiramartins?igsh=b3RzY3phNWNwcnpt'
+                  }
                   target='_blank'
                   className='text-white font text-2xl underline underline-offset-8'
                 >
@@ -746,7 +321,7 @@ export default function Home() {
         <section className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-40 py-20 pb-40 relative'>
           <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
           <Title title={'Onde Atendemos'} />
-          <Carousel slides={carouselItemsImages} variant='image' />
+          <Carousel slides={ondeAtendemos} variant='image' />
         </section>
 
         {/* Mapa */}
