@@ -24,10 +24,14 @@ const Footer = () => {
           <div className='flex flex-col gap-5'>
             <span className='font-bold text-3xl '>Contato</span>
             <div className='flex flex-col gap-2 text-xl'>
-              <span>Telefone: (51) 3207-8469</span>
-              <span>Whatsapp: (51) 98901-6197</span>
               <span>
-                Email:{' '}
+                <b>Telefone:</b> (51) 3207-8469
+              </span>
+              <span>
+                <b>Whatsapp:</b> (51) 98901-6197
+              </span>
+              <span>
+                <b> Email:</b>{' '}
                 <a
                   href='mailto:contato
             @andrea.vm1970@gmail.com'
@@ -55,7 +59,7 @@ const Footer = () => {
                 </div>
               </Link>
               <Link
-                href='https://www.instagram.com/andrea.vieira.machado/'
+                href='https://www.instagram.com/draandreavieiramartins?igsh=b3RzY3phNWNwcnpt'
                 target='_blank'
               >
                 <div className='bg-white rounded-full p-2 box-border  hover:bg-gray-200'>
@@ -65,19 +69,9 @@ const Footer = () => {
                   />
                 </div>
               </Link>
+
               <Link
-                href='https://www.instagram.com/andrea.vieira.machado/'
-                target='_blank'
-              >
-                <div className='bg-white rounded-full p-2 box-border  hover:bg-gray-200'>
-                  <LinkedIn
-                    fontSize='large'
-                    sx={{ color: '#8c0d3b', fontSize: '40px' }}
-                  />
-                </div>
-              </Link>
-              <Link
-                href='https://www.instagram.com/andrea.vieira.machado/'
+                href='https://www.youtube.com/@andreavieiramartins8296'
                 target='_blank'
               >
                 <div className='bg-white rounded-full p-2 box-border  hover:bg-gray-200'>

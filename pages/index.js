@@ -461,30 +461,6 @@ export default function Home() {
     { url: '/images/home-image.png' },
   ]
 
-  /*  const feedbacks = [
-    {
-      paciente: 'Moacir Martins',
-      feedback:
-        'Me lembro como fosse ontem, tudo começou com um dente quebrado e minha dentista não realizando implante indicou o consultório da dra. Andréa, que prontamente marcou uma consulta para avaliação. Fui recepcionado por sua equipe de atendimento com uma simpatia que me deixou logo bem a vontade para discorrer sobre meu problema. Com a Dra. recebi outro atendimento, muito profissional e cordial, num ambiente extremamente limpo e delicado, muito bem decorado com suas cores prediletas e com poder de relaxamento e segurança. Após esse tratamento e quase com alta, uma azeitona com caroço se atravessou na minha vida, mais precisamente na minha boca, quebrando outro dente. Quis o destino já estar sendo atendido pela dra. Andréa, iniciou aí uma relação profissional que me fez sentir muito seguro nas suas mãos, hoje já se passaram três anos, que eu frequento seu consultório, carregando toda a família pra ser seus pacientes. Agradeço muito à dra. Andréa pelo excelente trabalho nos meus dentes e de não deixar faltar nenhum espaço entre os dentes originais, mantendo esse sorriso que muitos me reconhecem e eu faço questão de usá-lo.Sou grato e super indico seus serviços, seguros, atualizados e comprometidos com o bem estar do seu paciente, além de uma pessoa afável e muito simpática de conviver.',
-      image: '/images/paciente-1.jpg',
-      inicioPaciente: '2010',
-    },
-    {
-      paciente: 'Ana Amélia de Vargas',
-      feedback:
-        'Fui procurar a Dra Andrea, depois de entender, o quanto os dentes estão correlacionadas com o todo. Eu  tinha uma sensibilidade ao correr, quando  fazia alguma atividade física. Fui em alguns dentistas convencionais, e eles me disseram que eu não tinha nada.Como não ter nada, se tu sente algo diferente? Então, a Dra Andréa começou meus tratamentos e a sensibilidade desapareceu! Eu brinco com ela que a minha boca é “uma caixinha de surpresas “, porque ela sempre acha alguma coisinha! Amo trabalho da Dra, não só o seu profissionalismo, mas também a pessoa maravilhosa que ela é.',
-      image: '/images/paciente-1.jpg',
-      inicioPaciente: '2010',
-    },
-    {
-      paciente: 'Maria da Silva',
-      feedback:
-        'Excelente profissional, atenciosa e dedicada. Recomendo a todos!',
-      image: '/images/paciente-1.jpg',
-      inicioPaciente: '2010',
-    },
-  ] */
-
   return (
     <>
       <Head>
@@ -799,76 +775,13 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <WhatsAppButton />
+
         {/* Footer */}
 
         <Footer />
       </main>
     </>
   )
-}
-
-{
-  /* <Button
-label='Clique aqui'
-variant={'grid'}
-onClick={() => alert('Clicou')}
-icon={
-  <svg
-    width='100px'
-    height='100px'
-    viewBox='0 0 16 16'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
-      d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-      fill='#fff'
-    />
-  </svg>
-}
-row={1}
-/>
-<Button
-label='Clique aqui'
-variant={'grid'}
-onClick={() => alert('Clicou')}
-row={2}
-/>
-<Button
-label='Clique aqui'
-variant={'grid'}
-onClick={() => alert('Clicou')}
-row={3}
-/>
-<Button
-label='Clique aqui'
-variant={'grid'}
-onClick={() => alert('Clicou')}
-row={4}
-/>
-
-<Button
-label='Clique aqui'
-variant={'primary'}
-onClick={() => alert('Clicou')}
-icon={
-  <svg
-    width='20px'
-    height='20px'
-    viewBox='0 0 16 16'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
-      d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-      fill='#fff'
-    />
-  </svg>
-}
-/> */
 }
