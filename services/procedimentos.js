@@ -256,19 +256,43 @@ const procedimentos = [
     ),
     modalContent: (
       <>
-        <div className='flex flex-col justify-center items-center text-wrap text-xl gap-10 px-10'>
+        <div className='flex flex-col justify-center items-center text-wrap text-xl gap-6 px-10'>
           <p className='text-center'>
-            Você já pensou em ter dentes{' '}
-            <b className='text-dark-pink'>mais brancos</b>?
+            O Clareamento Dental consiste no uso de produtos à base de
+            peróxido de hidrogênio ou de carbamida que, em contato com os
+            dentes, quebra as moléculas pigmentadas e{' '}
+            <b className='text-dark-pink'> deixa o dente mais branco.</b>
           </p>
           <p className='text-center'>
-            No meu consultório, oferecemos dois tipos de clareamento
-            dentário: o <b className='text-dark-pink'>caseiro</b> e o{' '}
-            <b className='text-dark-pink'>profissional</b>. No procedimento
-            caseiro, é feito uma moldeira de silicone transparente , a
-            partir de moldes do seu dente, para aplicação do gel clareador
-            em casa. Já o clareamento profissional é realizado totalmente
-            pelo cirurgião-dentista.
+            Para a efetividade e segurança do tratamento, é fundamental que
+            o paciente realize{' '}
+            <b className='text-dark-pink'>
+              um minucioso exame clínico e radiográfico
+            </b>{' '}
+            para avaliar se existe alguma condição que contraindica o
+            procedimento naquele momento, como nos casos da presença de
+            cárie, lesão ou doença gengival.
+          </p>
+          <p className='text-center'>
+            O procedimento pode ser feito de{' '}
+            <b className='text-dark-pink'>
+              {' '}
+              03 formas: Clareamento de Consultório; Clareamento Caseiro
+              Supervisionado; e Clareamento Misto.
+            </b>
+          </p>
+          <p className='text-center'>
+            O Clareamento feito em consultório, ocorre através da{' '}
+            <b className='text-center text-dark-pink '>
+              {' '}
+              aplicação do gel clareador em alta concentração e a
+              quantidade de sessões para gerar resultado{' '}
+            </b>
+            é determinada pelo dentista. Já o clareamento realizado em
+            casa, é feito com uma moldeira odontológica (feita sob medida)
+            em que é colocado o gel clareador e que deve permanecer em
+            contato com os dentes durante o tempo indicado pelo
+            profissional.
           </p>
           <b className='text-center text-dark-pink '>
             Seja qual for o método, a garantia de dentes branquinhos é a

@@ -7,14 +7,14 @@ const Modal = ({ isOpen, onClose, title, children }) => {
 
   return (
     <div
-      className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
+      className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 '
       onClick={onClose}
     >
       <div
-        className='bg-white rounded-lg shadow-lg w-full max-w-3xl max-h-3xl overflow-y-auto custom-scrollbar  pt-8 pb-16 flex flex-col gap-10'
+        className='bg-light-pink rounded-xl shadow-lg w-full max-w-5xl max-h-3xl overflow-y-auto custom-scrollbar  pt-8 pb-16 flex flex-col gap-10'
         onClick={e => e.stopPropagation()}
       >
-        <div className='flex justify-end items-center px-10 '>
+        {/*  <div className='flex justify-end items-center px-10 '>
           <Button
             variant={'icon'}
             onClick={onClose}
@@ -26,6 +26,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
             }
           />
         </div>
+ */}
         <div className='flex flex-col items-center gap-10 '>
           <h2 className='text-4xl font-semibold text-dark-pink px-10'>
             {title}
