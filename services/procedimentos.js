@@ -255,58 +255,78 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <>
-        <div className='flex flex-col justify-center items-center text-wrap text-xl gap-6 px-10'>
-          <p className='text-center'>
-            O Clareamento Dental consiste no uso de produtos à base de
-            peróxido de hidrogênio ou de carbamida que, em contato com os
-            dentes, quebra as moléculas pigmentadas e{' '}
-            <b className='text-dark-pink'> deixa o dente mais branco.</b>
-          </p>
-          <p className='text-center'>
-            Para a efetividade e segurança do tratamento, é fundamental que
-            o paciente realize{' '}
-            <b className='text-dark-pink'>
-              um minucioso exame clínico e radiográfico
-            </b>{' '}
-            para avaliar se existe alguma condição que contraindica o
-            procedimento naquele momento, como nos casos da presença de
-            cárie, lesão ou doença gengival.
-          </p>
-          <p className='text-center'>
-            O procedimento pode ser feito de{' '}
-            <b className='text-dark-pink'>
-              {' '}
-              03 formas: Clareamento de Consultório; Clareamento Caseiro
-              Supervisionado; e Clareamento Misto.
-            </b>
-          </p>
-          <p className='text-center'>
-            O Clareamento feito em consultório, ocorre através da{' '}
-            <b className='text-center text-dark-pink '>
-              {' '}
-              aplicação do gel clareador em alta concentração e a
-              quantidade de sessões para gerar resultado{' '}
-            </b>
-            é determinada pelo dentista. Já o clareamento realizado em
-            casa, é feito com uma moldeira odontológica (feita sob medida)
-            em que é colocado o gel clareador e que deve permanecer em
-            contato com os dentes durante o tempo indicado pelo
-            profissional.
-          </p>
-          <b className='text-center text-dark-pink '>
-            Seja qual for o método, a garantia de dentes branquinhos é a
-            mesma!
-          </b>
+      <div className='flex gap-10 relative'>
+        <div>
+          <Image
+            src='/images/procedimentos/clareamento/clareamento.png'
+            width={2000}
+            height={900}
+            alt='Clareamento Dentário'
+          />
         </div>
 
-        <Image
-          src='/images/procedimentos/clareamento.png'
-          width={1000}
-          height={400}
-          alt='Clareamento Dentário'
-        />
-      </>
+        <div className='flex flex-col justify-center items-center text-wrap gap-10 px-20 h-full relative'>
+          <div className='absolute top-0' style={{ left: '-3rem' }}>
+            <Image
+              src='/background/border-dark-pink.svg'
+              width={86.5}
+              height={400}
+              alt='Clareamento Dentário'
+            />
+          </div>
+          <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+            <h2 className='text-4xl text-center font-semibold text-dark-pink px-10'>
+              Clareamento Dentário
+            </h2>
+            <div className='flex flex-col justify-center items-center text-wrap text-xl gap-6 '>
+              <p className='text-justify'>
+                O Clareamento Dental consiste no uso de produtos à base de
+                peróxido de hidrogênio ou de carbamida que, em contato com
+                os dentes, quebra as moléculas pigmentadas e{' '}
+                <b className='text-dark-pink'>
+                  {' '}
+                  deixa o dente mais branco.
+                </b>
+              </p>
+              <p className='text-justify'>
+                Para a efetividade e segurança do tratamento, é fundamental
+                que o paciente realize{' '}
+                <b className='text-dark-pink'>
+                  um minucioso exame clínico e radiográfico
+                </b>{' '}
+                para avaliar se existe alguma condição que contraindica o
+                procedimento naquele momento, como nos casos da presença de
+                cárie, lesão ou doença gengival.
+              </p>
+              <p className='text-justify'>
+                O procedimento pode ser feito de{' '}
+                <b className='text-dark-pink'>
+                  {' '}
+                  03 formas: Clareamento de Consultório; Clareamento
+                  Caseiro Supervisionado; e Clareamento Misto.
+                </b>
+              </p>
+              <p className='text-justify'>
+                O Clareamento feito em consultório, ocorre através da{' '}
+                <b className='text-justify text-dark-pink '>
+                  {' '}
+                  aplicação do gel clareador em alta concentração e a
+                  quantidade de sessões para gerar resultado{' '}
+                </b>
+                é determinada pelo dentista. Já o clareamento realizado em
+                casa, é feito com uma moldeira odontológica (feita sob
+                medida) em que é colocado o gel clareador e que deve
+                permanecer em contato com os dentes durante o tempo
+                indicado pelo profissional.
+              </p>
+              <b className='text-justify text-dark-pink '>
+                Seja qual for o método, a garantia de dentes branquinhos é
+                a mesma!
+              </b>
+            </div>
+          </div>
+        </div>
+      </div>
     ),
   },
   {
