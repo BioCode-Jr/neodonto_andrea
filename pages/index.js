@@ -199,7 +199,7 @@ export default function Home() {
                   key={index}
                   isOpen={activeModal === index}
                   onClose={handleCloseModal}
-                  title={procedimento.label}
+                  image={procedimento.modalImage}
                 >
                   {procedimento.modalContent}
                 </Modal>
