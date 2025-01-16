@@ -11,21 +11,51 @@ const procedimentos = [
         alt='Clareamento Dentário'
       />
     ),
-    modal: (
-      <svg
-        width='100px'
-        height='100px'
-        viewBox='0 0 16 16'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
-          d='M16 2H0V14H16V2ZM5 10.5C6.38071 10.5 7.5 9.38071 7.5 8C7.5 6.61929 6.38071 5.5 5 5.5C3.61929 5.5 2.5 6.61929 2.5 8C2.5 9.38071 3.61929 10.5 5 10.5ZM10 5H14V7H10V5ZM14 9H10V11H14V9Z'
-          fill='#fff'
-        />
-      </svg>
+    modalImage: '/images/procedimentos/ozonioterapia/ozonioterapia.png',
+    modalContent: (
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+        <h2 className='text-4xl text-center font-semibold text-dark-pink px-10'>
+          Ozonioterapia
+        </h2>
+        <div className='flex flex-col justify-center items-center text-wrap text-xl gap-6 '>
+          <p className='text-justify'>
+            Quando falamos em Ozonioterapia, nos referimos à uma mistura
+            gasosa composta por oxigênio de alta pureza e ozônio, obtida a
+            partir de uma descarga elétrica através de um gerador de ozônio
+            medicinal.
+          </p>
+          <p className='text-justify'>
+            Essa mistura gasosa apresenta muitos benefícios quando
+            utilizada na Odontologia, pois além de seu{' '}
+            <b className='text-dark-pink'> efeito antimicrobiano</b>,
+            matando vírus, bactérias e fungos, o ozônio aumenta a
+            oxigenação tecidual, ativa o{' '}
+            <b className='text-dark-pink'>
+              sistema antioxidante e modula o sistema imunológico.
+            </b>
+          </p>
+          <p className='text-justify'>
+            No tratamento odontológico, a Ozonioterapia otimiza os
+            resultados dos procedimentos convencionais. Dentre as muitas
+            vantagens que o uso do ozônio representa na Odontologia,
+            podemos citar:
+          </p>
+          <p className='text-justify'>
+            É um potente antisséptico; Melhora a textura e flacidez da
+            pele; Elimina fungos que, normalmente, aderem às dentaduras ou
+            próteses; Diminui o sangramento durante as cirurgias; Reduz a
+            dor e a sensibilidade após procedimentos cirúrgicos; Auxilia no
+            tratamento de necrose do osso maxilar; Melhora a cicatrização e
+            acelera o processo de reparo tecidual pós cirurgias; Promove a
+            redução de micro-organismos nas lesões cariosas; Age na
+            desinfecção de bolsas periodontais e lesões ao redor de
+            implantes; Combate as infecções relacionadas aos problemas de
+            canal; Diminui a dor e auxilia no tratamento dos distúrbios da
+            articulação temporomandibular (ATM); Acelera a cicatrização das
+            lesões herpéticas e da mucosite oral.
+          </p>
+        </div>
+      </div>
     ),
   },
   {

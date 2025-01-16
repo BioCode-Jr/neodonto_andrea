@@ -29,17 +29,17 @@ const Modal = ({ isOpen, onClose, image, children }) => {
                 }
               />
             </div>
-            <div>
+            <div className='h-[500] min-w-[300px] relative'>
               <Image
                 src={image}
-                width={1300}
-                height={900}
-                alt='Clareamento Dentário'
+                width={500}
+                height={500}
+                alt='imagem procedimento'
               />
             </div>
 
-            <div className='flex flex-col justify-center items-center text-wrap gap-10 px-20 h-full '>
-              <div className='absolute top-0 left-[240px]'>
+            <div className='flex flex-col justify-center items-center text-wrap gap-10 px-20 h-full relative'>
+              <div className='absolute top-0 left-[0]'>
                 <Image
                   src='/background/border-dark-pink.svg'
                   width={70}
