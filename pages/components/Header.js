@@ -18,7 +18,7 @@ const Header = () => {
       <Image src='/images/logo.png' alt='logo' width={100} height={100} />
       <nav className='flex items-center justify-between w-4/6'>
         <ul className='flex items-center w-full justify-between'>
-          {navItems.map((item, index) => (
+          {navItems?.map((item, index) => (
             <li
               key={index}
               className='hover:underline hover:underline-offset-8 hover:text-dark-pink hover:decoration-2'

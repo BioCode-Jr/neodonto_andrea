@@ -39,7 +39,7 @@ const Carousel = ({ slides, variant }) => {
           }}
         >
           {variant === 'image'
-            ? slides.map((slide, index) => (
+            ? slides?.map((slide, index) => (
                 <div
                   key={index}
                   className={`px-2 transition-opacity duration-700 ease-in-out ${
@@ -58,7 +58,7 @@ const Carousel = ({ slides, variant }) => {
                 </div>
               ))
             : variant === 'feedback'
-            ? slides.map((slide, index) => (
+            ? slides?.map((slide, index) => (
                 <div
                   key={index}
                   className={`min-w-full flex justify-center items-center transition-opacity duration-700 ease-in-out ${
@@ -124,7 +124,7 @@ const Carousel = ({ slides, variant }) => {
 
       {/* Bolinhas de navegação */}
       <div className='justify-center flex space-x-2'>
-        {slides.map((_, index) => (
+        {slides?.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}

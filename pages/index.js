@@ -182,7 +182,7 @@ export default function Home() {
           <div className='bg-border-white-2 bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
 
           <div className='bg-white flex flex-wrap gap-16 justify-center px-40 py-20'>
-            {procedimentos.map((procedimento, index) => (
+            {procedimentos?.map((procedimento, index) => (
               <Button
                 key={index}
                 label={procedimento.label}
@@ -194,7 +194,7 @@ export default function Home() {
             ))}
           </div>
 
-          {procedimentos.map(
+          {procedimentos?.map(
             (procedimento, index) =>
               activeModal === index && (
                 <Modal
