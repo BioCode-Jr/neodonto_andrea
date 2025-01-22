@@ -10,7 +10,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='flex w-full min-h-60 bg-dark-pink text-white px-20 py-10 gap-10'>
+    <footer
+      className='flex w-full min-h-60 bg-dark-pink text-white px-20 py-10 gap-10'
+      id='contato'
+    >
       <div className='flex justify-center items-center rounded-full'>
         <Image
           src='/images/logoBranco.png'

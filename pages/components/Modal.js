@@ -35,18 +35,19 @@ const Modal = ({ isOpen, onClose, image, children }) => {
                 width={500}
                 height={500}
                 alt='imagem procedimento'
+                className=' border-r-4 border-dark-pink '
               />
             </div>
 
             <div className='flex flex-col justify-center items-center text-wrap gap-10 px-20 h-full relative'>
-              <div className='absolute top-0 left-[0]'>
+              {/* <div className='absolute top-0 left-[0]'>
                 <Image
                   src='/background/border-dark-pink.svg'
                   width={70}
                   height={400}
                   alt='borda rosa escura'
                 />
-              </div>
+              </div> */}
 
               {children}
             </div>

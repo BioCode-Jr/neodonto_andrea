@@ -56,7 +56,9 @@ export default function Home() {
                 <Button
                   label='FALE CONOSCO'
                   variant={'primary'}
-                  onClick={() => alert('Clicou')}
+                  onClick={() => {
+                    window.open('https://wa.me/5551989016197', '_blank')
+                  }}
                 />
               </div>
             </div>
@@ -174,7 +176,7 @@ export default function Home() {
         {/* Procedimentos */}
 
         <section
-          className='flex flex-col relative  justify-center w-full min-h-160 bg-white px-40 '
+          className='flex flex-col relative justify-center w-full min-h-160 bg-white px-40 pb-40 '
           id='procedimentos'
         >
           <div className='bg-border-white-2 bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
@@ -217,7 +219,10 @@ export default function Home() {
 
         {/* Depoimentos */}
 
-        <section className='flex flex-col justify-center w-full min-h-160 bg-white gap-10 px-40 py-20 pb-20 relative'>
+        <section
+          className='flex flex-col justify-center w-full min-h-160 bg-white gap-10 px-40 py-20 pb-20 relative'
+          id='depoimentos'
+        >
           <div className='bg-border-white bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
 
           <Carousel slides={feedbacks} variant='feedback' />
@@ -318,7 +323,10 @@ export default function Home() {
 
         {/* Onde Atendemos */}
 
-        <section className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-40 py-20 pb-40 relative'>
+        <section
+          className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-40 py-20 pb-40 relative'
+          id='localizacao'
+        >
           <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
           <Title title={'Onde Atendemos'} />
           <Carousel slides={ondeAtendemos} variant='image' />
