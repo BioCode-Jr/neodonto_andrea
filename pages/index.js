@@ -267,7 +267,7 @@ export default function Home() {
                 </div>
                 <div className='flex flex-col'>
                   <span className='text-pink-grad-40 text-6xl font-semibold'>
-                    4k+
+                    5k+
                   </span>
                   <span className='text-3xl'>seguidores no Instagram</span>
                 </div>

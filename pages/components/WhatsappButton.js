@@ -45,7 +45,7 @@ const WhatsAppButton = () => {
           />
         </div>
         <span className='hidden md:inline-block font-medium'>
-          Agende sua consulta!
+          Fale Conosco
         </span>
       </div>
     </Link>
