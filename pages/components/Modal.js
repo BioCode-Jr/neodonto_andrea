@@ -32,7 +32,9 @@ const Modal = ({ isOpen, onClose, title, children }) => {
           <Button
             label='Fale Conosco'
             variant={'secondary'}
-            onClick={() => alert('Clicou')}
+            onClick={() => {
+              window.open('https://wa.me/5551989016197', '_blank')
+            }}
           />
         </div>
       </div>
