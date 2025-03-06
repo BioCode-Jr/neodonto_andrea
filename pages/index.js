@@ -12,9 +12,15 @@ import Link from 'next/link'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsappButton'
 import { procedimentos } from '@/services/procedimentos'
+import AndreaModal from './components/AndreaModal'
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState(null)
+  const [activeAndreaModal, setActiveAndreaModal] = useState(false)
+
+  const handleOpenAndreaModal = index => {
+    setActiveAndreaModal(index)
+  }
 
   const handleOpenModal = index => {
     setActiveModal(index)
@@ -165,9 +171,15 @@ export default function Home() {
                   <Button
                     label='LEIA MAIS AQUI'
                     variant={'primary'}
-                    onClick={() => alert('Clicou')}
+                    onClick={() => setActiveAndreaModal(true)}
                   />
                 </div>
+                {activeAndreaModal && (
+                  <AndreaModal
+                    isOpen={activeAndreaModal}
+                    closeModal={() => setActiveAndreaModal(false)}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -202,6 +214,7 @@ export default function Home() {
                   isOpen={activeModal === index}
                   onClose={handleCloseModal}
                   image={procedimento.modalImage}
+                  procedimentosModal
                 >
                   {procedimento.modalContent}
                 </Modal>
