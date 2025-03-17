@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from './Button'
 import { Close } from '@mui/icons-material'
 
-const Modal = ({
-  isOpen,
-  onClose,
-  title,
-  children,
-  procedimentosModal,
-}) => {
+const Modal = ({ isOpen, onClose, children, procedimentosModal }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('modal-open')
+    } else {
+      document.body.classList.remove('modal-open')
+    }
+
+    return () => {
+      document.body.classList.remove('modal-open')
+    }
+  }, [isOpen])
   if (!isOpen) return null
 
   return (
@@ -34,7 +39,7 @@ const Modal = ({
             }
           />
         </div>
-        <div className='flex flex-col items-center '>{children}</div>
+        <div className='flex flex-col items-center w-full'>{children}</div>
         {procedimentosModal && (
           <div className='flex justify-center '>
             <Button
