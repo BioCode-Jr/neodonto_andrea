@@ -11,15 +11,14 @@ const procedimentos = [
         alt='Ozonioterapia'
       />
     ),
-    modalImage: '/images/procedimentos/ozonioterapia/ozonioterapia.png',
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
-        <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative  w-full'>
+        <div className='flex flex-col justify-center items-center text-wrap text-xl px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Ozonioterapia
           </h2>
           <div
-            className='flex flex-col justify-center items-center text-wrap text-xl gap-6 px-10 '
+            className='flex flex-col justify-center items-center text-wrap text-xl gap-6 px-10 flex-wrap'
             style={{ padding: '0 4.5rem' }}
           >
             <p className='text-justify'>
@@ -86,10 +85,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/ozonioterapia/ozonioterapia.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Ozonioterapia'
         />
       </div>
     ),
@@ -105,7 +104,7 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Harmonização Facial Integrativa
@@ -176,10 +175,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/harmonizacao/harmonizacao.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Harmonização Facial Integrativa'
         />
       </div>
     ),
@@ -195,7 +194,7 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Implantes Cerâmicos
@@ -270,10 +269,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/implantes/implantes.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Implantes Cerâmicos'
         />
       </div>
     ),
@@ -289,7 +288,7 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Restaurações Estéticas
@@ -324,10 +323,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/restauracao/restauracao.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Restaurações Estéticas'
         />
       </div>
     ),
@@ -343,7 +342,7 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Cirurgias Gengivais Estéticas
@@ -389,10 +388,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/cirurgia/cirurgia.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Cirurgias Gengivais Estéticas'
         />
       </div>
     ),
@@ -408,7 +407,7 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Tratamento de Cavitações (NICO)
@@ -450,10 +449,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/nico/nico.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Tratamento de Cavitações (NICO)'
         />
       </div>
     ),
@@ -469,7 +468,7 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Remoção Segura do Amálgama
@@ -519,10 +518,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/remocao/remocao.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Remoção Segura do Amálgama'
         />
       </div>
     ),
@@ -538,7 +537,7 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Tratamento de Gengivite e Periodontite
@@ -590,10 +589,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/gengivite/gengivite.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Tratamento de Gengivite e Periodontite'
         />
       </div>
     ),
@@ -609,7 +608,7 @@ const procedimentos = [
       />
     ),
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Próteses
@@ -653,10 +652,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/protese/protese.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Próteses'
         />
       </div>
     ),
@@ -673,7 +672,7 @@ const procedimentos = [
     ),
     modalImage: '/images/procedimentos/clareamento/clareamento.png',
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Clareamento Dentário
@@ -690,7 +689,7 @@ const procedimentos = [
             </p>
             <p className='text-justify'>
               Para a efetividade e segurança do tratamento, é fundamental
-              que o paciente realize{' '}
+              que o paciente realize{' '}
               <b className='text-dark-pink'>
                 um minucioso exame clínico e radiográfico
               </b>{' '}
@@ -747,7 +746,7 @@ const procedimentos = [
     ),
     modalImage: '/images/procedimentos/prescricao/canabinoides.png',
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Prescrição com Canabinóides
@@ -800,10 +799,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/cannabis/cannabis.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Prescrição de Canabinóides'
         />
       </div>
     ),
@@ -820,7 +819,7 @@ const procedimentos = [
     ),
     modalImage: '/images/procedimentos/laserterapia/laserterapia.png',
     modalContent: (
-      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative'>
+      <div className='flex flex-col justify-center items-center text-wrap gap-10 h-full relative w-full'>
         <div className='flex flex-col justify-center items-center text-wrap text-xl  px-10'>
           <h2 className='text-4xl text-center font-semibold text-dark-pink px-10 py-10'>
             Laserterapia e ILIB
@@ -861,10 +860,10 @@ const procedimentos = [
         </div>
 
         <Image
-          src='/images/procedimentos/clareamento/clareamento.png'
+          src='/images/procedimentos/laserterapia/laserterapia.png'
           width={2000}
           height={400}
-          alt='Clareamento Dentário'
+          alt='Laserterapia e ILIB'
         />
       </div>
     ),
