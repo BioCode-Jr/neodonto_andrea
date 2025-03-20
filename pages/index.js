@@ -35,7 +35,7 @@ export default function Home() {
   }))
 
   const galeriaSorrisos = Array.from({ length: 23 }, (_, i) => ({
-    url: `/images/galeriaSorrisos/image${i + 1}.png`,
+    url: `/images/galeriaSorrisos/image${i + 1}.jpg`,
   }))
 
   return (
@@ -233,7 +233,7 @@ export default function Home() {
         {/* Depoimentos */}
 
         <section
-          className='flex flex-col justify-center w-full min-h-160 bg-white gap-10 px-40 py-20 pb-20 relative'
+          className='flex flex-col justify-center w-full  bg-white gap-10 px-40 py-20 pb-20 relative'
           id='depoimentos'
         >
           <div className='bg-border-white bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />

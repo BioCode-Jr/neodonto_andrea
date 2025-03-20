@@ -16,36 +16,21 @@ const Carousel = ({ slides, variant }) => {
     )
   }
 
-  useEffect(() => {
-    if (variant === 'image') {
-      const interval = setInterval(() => {
-        nextSlide()
-      }, 5000)
-      return () => clearInterval(interval)
-    }
-  }, [currentIndex])
-
   return (
     <div className='flex flex-col gap-5 w-full mx-auto relative'>
       <div className='overflow-hidden relative '>
         <div
-          className='flex transition-transform duration-700 ease-in-out'
+          className='flex transition-transform duration-700 ease-in-out max-h-fit'
           style={{
-            // Se for "image", mantemos o movimento de múltiplos slides, caso contrário um slide por vez
-            transform:
-              variant === 'image'
-                ? `translateX(-${(currentIndex - 1) * 33.33}%)`
-                : `translateX(-${currentIndex * 100}%)`,
+            transform: `translateX(-${currentIndex * 100}%)`,
           }}
         >
           {variant === 'image'
             ? slides?.map((slide, index) => (
                 <div
                   key={index}
-                  className={`px-2 transition-opacity duration-700 ease-in-out ${
-                    index === currentIndex
-                      ? 'min-w-[40%] scale-100 opacity-100'
-                      : 'min-w-[33.33%] scale-90 opacity-50'
+                  className={`min-w-full transition-opacity duration-700 flex justify-center ease-in-out ${
+                    index === currentIndex ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
                   <Image
@@ -53,7 +38,7 @@ const Carousel = ({ slides, variant }) => {
                     width={400}
                     height={400}
                     alt={`Slide ${index + 1}`}
-                    className='w-full h-96 object-cover rounded-lg'
+                    className='w-240 h-128 object-contain rounded-lg'
                   />
                 </div>
               ))
@@ -69,7 +54,10 @@ const Carousel = ({ slides, variant }) => {
                     <span className='font-bold text-white text-5xl'>
                       Depoimentos
                     </span>
-                    <div className='flex bg-white rounded-4xl w-full h-full p-8 gap-6 flex-col gap'>
+                    <div
+                      className='flex bg-white rounded-4xl w-full p-8 gap-6 flex-col'
+                      style={{ maxWidth: '100%' }}
+                    >
                       <div className='flex items-center justify-center gap-5'>
                         <Image
                           src={slide.image}
@@ -140,7 +128,10 @@ const Carousel = ({ slides, variant }) => {
       </div>
 
       {/* Botões de navegação */}
-      <div className='flex gap-2 justify-center'>
+      <div
+        className='flex gap-2 justify-center'
+        style={{ marginTop: '24px' }}
+      >
         <Button
           icon={<ArrowBack />}
           variant='iconPink'

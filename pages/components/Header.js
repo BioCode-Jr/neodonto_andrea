@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
+import { Menu, Close } from '@mui/icons-material'
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const navItems = [
     { label: 'Início', href: '#' },
     { label: 'Sobre', href: '#sobre' },
@@ -14,17 +16,31 @@ const Header = () => {
   ]
 
   return (
-    <header className='flex h-max max-h-32 w-full justify-around px-8 py-4 shadow'>
-      <Image src='/images/logo.png' alt='logo' width={100} height={100} />
-      <nav className='flex items-center justify-between w-4/6'>
-        <ul className='flex items-center w-full justify-between'>
+    <header className='flex flex-wrap items-center justify-between px-4 py-4 shadow-md md:px-8'>
+      <div className='flex items-center justify-between w-full md:w-auto'>
+        <Image
+          src='/images/logo.png'
+          alt='logo'
+          width={100}
+          height={100}
+        />
+        <button
+          className='text-dark-pink md:hidden'
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <Close fontSize='large' /> : <Menu fontSize='large' />}
+        </button>
+      </div>
+      <nav
+        className={`${
+          isOpen ? 'block' : 'hidden'
+        } w-full md:flex md:items-center md:w-auto`}
+      >
+        <ul className='flex flex-col items-center w-full space-y-4 md:flex-row md:space-y-0 md:space-x-8'>
           {navItems?.map((item, index) => (
-            <li
-              key={index}
-              className='hover:underline hover:underline-offset-8 hover:text-dark-pink hover:decoration-2'
-            >
+            <li key={index}>
               <Link href={item.href}>
-                <span className='text-pink-400 hover:text-dark-pink font-semibold '>
+                <span className='text-pink-400 hover:text-dark-pink font-semibold'>
                   {item.label}
                 </span>
               </Link>
