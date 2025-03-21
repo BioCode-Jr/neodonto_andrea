@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Button from './Button'
 import { ArrowBack, ArrowForward, Star } from '@mui/icons-material'
 import Image from 'next/image'
@@ -18,7 +18,7 @@ const Carousel = ({ slides, variant }) => {
 
   return (
     <div className='flex flex-col gap-5 w-full mx-auto relative'>
-      <div className='overflow-hidden relative '>
+      <div className='overflow-hidden relative'>
         <div
           className='flex transition-transform duration-700 ease-in-out max-h-fit'
           style={{
@@ -50,27 +50,24 @@ const Carousel = ({ slides, variant }) => {
                     index === currentIndex ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
-                  <div className='flex flex-col w-3/5 justify-center items-center gap-6 p-10 bg-pink-300 rounded-7xl shadow-md'>
-                    <span className='font-bold text-white text-5xl'>
+                  <div className='flex flex-col sm:w-full md:w-3/5 justify-center items-center gap-6 p-6 sm:p-8 md:p-10 bg-pink-300 rounded-7xl shadow-md'>
+                    <span className='font-bold text-white text-3xl sm:text-4xl md:text-5xl'>
                       Depoimentos
                     </span>
-                    <div
-                      className='flex bg-white rounded-4xl w-full p-8 gap-6 flex-col'
-                      style={{ maxWidth: '100%' }}
-                    >
-                      <div className='flex items-center justify-center gap-5'>
+                    <div className='flex bg-white rounded-4xl w-full p-6 sm:p-8 gap-4 sm:gap-6 flex-col max-w-[90%] md:max-w-full'>
+                      <div className='flex items-center justify-center gap-4 sm:gap-5'>
                         <Image
                           src={slide.image}
-                          width={100}
-                          height={100}
+                          width={80}
+                          height={80}
                           alt={`Paciente ${index + 1}`}
-                          className='rounded-full border-4 border-dark-pink '
+                          className='rounded-full border-4 border-dark-pink'
                         />
                         <div className='flex flex-col gap-1'>
-                          <p className='text-black text-3xl font-semibold'>
+                          <p className='text-black text-lg sm:text-2xl md:text-3xl font-semibold'>
                             {slide.paciente}
                           </p>
-                          <p className='text-dark-pink text-lg'>
+                          <p className='text-dark-pink text-sm sm:text-lg'>
                             Paciente desde {slide.inicioPaciente}
                           </p>
                           <div className='flex gap-1'>
@@ -83,21 +80,21 @@ const Carousel = ({ slides, variant }) => {
                         </div>
                       </div>
 
-                      <p className='relative text-gray-600'>
+                      <p className='relative text-gray-600 text-sm sm:text-lg'>
                         <Image
                           src={'/images/quote.svg'}
-                          width={30}
-                          height={30}
+                          width={20}
+                          height={20}
                           alt={`Paciente ${index + 1}`}
                           className='absolute -top-2 -left-2'
                         />
-                        <span className='block text-justify text-lg pl-8 pr-8'>
+                        <span className='block text-justify pl-6 pr-6'>
                           {slide.feedback}
                         </span>
                         <Image
                           src={'/images/quote.svg'}
-                          width={30}
-                          height={30}
+                          width={20}
+                          height={20}
                           className='absolute transform rotate-180 bottom-0 right-0'
                           alt={`Paciente ${index + 1}`}
                         />
@@ -128,10 +125,7 @@ const Carousel = ({ slides, variant }) => {
       </div>
 
       {/* Botões de navegação */}
-      <div
-        className='flex gap-2 justify-center'
-        style={{ marginTop: '24px' }}
-      >
+      <div className='flex gap-2 justify-center mt-6'>
         <Button
           icon={<ArrowBack />}
           variant='iconPink'
@@ -146,4 +140,5 @@ const Carousel = ({ slides, variant }) => {
     </div>
   )
 }
+
 export default Carousel

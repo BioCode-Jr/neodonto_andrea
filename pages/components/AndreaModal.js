@@ -5,8 +5,8 @@ import Image from 'next/image'
 const AndreaModal = ({ isOpen, closeModal }) => {
   return (
     <Modal isOpen={isOpen} onClose={closeModal}>
-      <div className='flex items-center gap-16 px-10 py-10 relative'>
-        <div className='flex-shrink-0 bg-darker-pink p-2 rounded-full'>
+      <div className='flex flex-col md:flex-row items-center gap-8 md:gap-16 px-4 md:px-10 py-10 relative'>
+        <div className='flex-shrink-0 bg-dark-pink p-2 rounded-full md:flex hidden'>
           <Image
             src='/images/andrea-photo.png'
             width={300}
@@ -15,7 +15,7 @@ const AndreaModal = ({ isOpen, closeModal }) => {
             className='rounded-full'
           />
         </div>
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-4 text-sm md:text-base'>
           <p className='text-justify'>
             Quando eu escolhi a Odontologia, há mais de 30 anos, não sabia
             muito bem o que essa escolha significaria. Só sabia que queria

@@ -34,7 +34,7 @@ const WhatsAppButton = () => {
       rel='noopener noreferrer'
     >
       <div
-        className={`fixed bottom-4 right-4 flex items-center space-x-2 bg-white hover:bg-gray-200 py-2 px-3 rounded-full shadow-lg transition-opacity duration-500 ${
+        className={`fixed bottom-4 right-4 flex items-center space-x-2 bg-white hover:bg-gray-200 py-2 px-3 rounded-full shadow-lg transition-opacity duration-500 z-50 ${
           isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >

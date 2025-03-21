@@ -36,7 +36,7 @@ const Header = () => {
           isOpen ? 'block' : 'hidden'
         } w-full md:flex md:items-center md:w-auto`}
       >
-        <ul className='flex flex-col items-center w-full space-y-4 md:flex-row md:space-y-0 md:space-x-8'>
+        <ul className='flex flex-col items-center w-full space-y-4 md:flex-row md:space-y-0 md:space-x-20'>
           {navItems?.map((item, index) => (
             <li key={index}>
               <Link href={item.href}>

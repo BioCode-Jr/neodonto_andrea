@@ -18,10 +18,6 @@ export default function Home() {
   const [activeModal, setActiveModal] = useState(null)
   const [activeAndreaModal, setActiveAndreaModal] = useState(false)
 
-  const handleOpenAndreaModal = index => {
-    setActiveAndreaModal(index)
-  }
-
   const handleOpenModal = index => {
     setActiveModal(index)
   }
@@ -49,10 +45,10 @@ export default function Home() {
         {/* Inicio */}
 
         <section id='#' className='w-full'>
-          <div className='flex flex-col relative items-end justify-center w-full h-224 bg-home-image bg-no-repeat bg-cover px-80 '>
+          <div className='flex flex-col relative items-end justify-center w-full h-224 bg-home-image bg-no-repeat bg-cover px-4 md:px-80'>
             <div className='absolute inset-0 bg-pink-300 opacity-50' />
-            <div className='flex flex-col items-center justify-center w-144 h-60 bg-pink-300 shadow-2xl rounded-3xl p-10 relative'>
-              <p className='text-4xl text-white text-wrap text-center'>
+            <div className='flex flex-col items-center justify-center w-full md:w-144 h-60 bg-pink-300 shadow-2xl rounded-3xl p-10 relative'>
+              <p className='text-2xl md:text-4xl text-white text-wrap text-center'>
                 Conheça a Odontologia que não trata apenas de{' '}
                 <span className='text-dark-pink font-bold'>DENTE</span>, e
                 sim de{' '}
@@ -68,14 +64,14 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className='bg-border-white bg-no-repeat h-40 w-full absolute -bottom-3 right-0 bg-cover'></div>
+            <div className='bg-border-white bg-no-repeat h-40 w-full absolute sm:-bottom-3 -bottom-20 right-0 bg-cover'></div>
           </div>
 
-          <div className='flex flex-col relative items-center gap-16 w-full min-h-160 bg-white pt-20 pb-52 px-40 '>
+          <div className='flex flex-col relative items-center gap-16 w-full min-h-160 bg-white pt-20 pb-52 px-4 md:px-40'>
             <Title title={'A Odontologia Integrativa'} />
-            <div className='flex gap-32'>
-              <div className=' flex flex-col gap-10 w-1/2'>
-                <p className='text-2xl text-black text-wrap text-justify'>
+            <div className='flex flex-col md:flex-row gap-10 sm:gap-32'>
+              <div className='flex flex-col gap-10 w-full md:w-1/2'>
+                <p className='text-xl md:text-2xl text-black text-wrap text-justify'>
                   <span className='text-dark-pink font-bold'>A</span>{' '}
                   Odontologia Integrativa é uma proposta que considera o
                   paciente como um todo, levando em conta os diversos
@@ -87,7 +83,7 @@ export default function Home() {
                   o desequilíbrio desses pode causar consequências no
                   organismo todo.
                 </p>
-                <p className='text-2xl text-black text-wrap text-justify'>
+                <p className='text-xl md:text-2xl text-black text-wrap text-justify'>
                   <span className='text-dark-pink font-bold'>F</span>ornece
                   suporte para que o próprio indivíduo contribua para o seu
                   processo de cura, estimulando a capacidade neural de
@@ -97,8 +93,8 @@ export default function Home() {
                   organismo.
                 </p>
               </div>
-              <div className='w-1/2 flex flex-col items-center gap-10'>
-                <p className='text-2xl text-black text-wrap text-justify'>
+              <div className='w-full md:w-1/2 flex flex-col items-center gap-10'>
+                <p className='text-xl md:text-2xl text-black text-wrap text-justify'>
                   <span className='text-dark-pink font-bold'>U</span>
                   tilizamos de abordagens multidisciplinares como por
                   exemplo:{' '}
@@ -118,7 +114,7 @@ export default function Home() {
                     quality={100}
                     alt='Odontologia Integrativa'
                   />
-                  <div className='absolute bottom-3 left-1/2 transform w-104 flex justify-center -translate-x-1/2 translate-y-1/2'>
+                  <div className='absolute bottom-3 left-1/2 transform w-80 sm:w-104 flex justify-center -translate-x-1/2 translate-y-1/2'>
                     <Button
                       label='Quer saber mais?'
                       secondLabel='Venha conversar conosco!'
@@ -136,26 +132,31 @@ export default function Home() {
         {/* Sobre */}
 
         <section
-          className='flex relative justify-end w-full min-h-160 bg-light-pink px-40 pb-20 '
+          className='flex relative flex-col-reverse sm:flex-row justify-end w-full min-h-160 bg-light-pink px-4 sm:px-10 md:px-40 pb-20'
           id='sobre'
         >
+          {/* Fundo decorativo */}
           <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
-          <div className=' absolute -left-20 -top-24 bg-dark-pink rounded-full'>
+
+          {/* Imagem da Andrea */}
+          <div className='sm:absolute sm:-left-20 -top-10 sm:-top-24 flex justify-center w-full sm:w-auto'>
             <Image
               src='/images/andrea-photo.png'
               width={674}
               height={674}
               quality={100}
               alt='Imagem da Andrea'
-              className='border-32 border-dark-pink rounded-full outline-none'
+              className='border-16 sm:border-32 border-dark-pink rounded-full sm:w-96 md:w-[674px]'
             />
           </div>
-          <div className='flex w-3/5 justify-end '>
-            <div className='min-h-160 bg-light-pink py-20 '>
-              <div className='flex flex-col items-center gap-16 px-20  '>
+
+          {/* Conteúdo de texto */}
+          <div className='flex w-full md:w-3/5 justify-end'>
+            <div className='min-h-160 bg-light-pink py-20'>
+              <div className='flex flex-col items-center gap-10 sm:gap-16 px-4 sm:px-10 md:px-20'>
                 <Title title={'Dra. Andréa Vieira Martins'} />
 
-                <p className='text-2xl text-dark-pink text-wrap text-justify'>
+                <p className='text-lg sm:text-xl md:text-2xl text-dark-pink text-justify'>
                   “Quando eu escolhi a Odontologia, não sabia muito bem o
                   que essa escolha significaria. Só sabia que queria um
                   curso ligado à saúde, no qual eu pudesse ser dona do meu
@@ -167,13 +168,15 @@ export default function Home() {
                   seus dentes. Notei que a verdadeira Odontologia não trata
                   de DENTE mas sim de GENTE!”
                 </p>
-                <div className='flex self-end'>
+
+                <div className='flex self-center sm:self-end'>
                   <Button
                     label='LEIA MAIS AQUI'
                     variant={'primary'}
                     onClick={() => setActiveAndreaModal(true)}
                   />
                 </div>
+
                 {activeAndreaModal && (
                   <AndreaModal
                     isOpen={activeAndreaModal}
@@ -188,12 +191,12 @@ export default function Home() {
         {/* Procedimentos */}
 
         <section
-          className='flex flex-col relative justify-center w-full min-h-160 bg-white px-40 pb-40 '
+          className='flex flex-col relative justify-center w-full min-h-160 bg-white px-4 md:px-40 pb-40'
           id='procedimentos'
         >
-          <div className='bg-border-white-2 bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
+          <div className='bg-border-white-2 bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
 
-          <div className='bg-white flex flex-wrap gap-16 justify-center px-40 py-20'>
+          <div className='bg-white flex flex-wrap gap-16 justify-center px-4 md:px-40 py-20'>
             {procedimentos?.map((procedimento, index) => (
               <Button
                 key={index}
@@ -224,7 +227,7 @@ export default function Home() {
 
         {/* Galeria de Sorrisos */}
 
-        <section className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-40 py-20 pb-40 relative'>
+        <section className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-4 md:px-40 py-20 pb-40 relative'>
           <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-32 right-0 bg-cover' />
           <Title title={'Galeria de Sorrisos'} />
           <Carousel slides={galeriaSorrisos} variant='image' />
@@ -233,10 +236,10 @@ export default function Home() {
         {/* Depoimentos */}
 
         <section
-          className='flex flex-col justify-center w-full  bg-white gap-10 px-40 py-20 pb-20 relative'
+          className='flex flex-col justify-center w-full bg-white gap-10 px-4 md:px-40 py-20 pb-20 relative'
           id='depoimentos'
         >
-          <div className='bg-border-white bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
+          <div className='bg-border-white bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
 
           <Carousel slides={feedbacks} variant='feedback' />
         </section>
@@ -245,87 +248,90 @@ export default function Home() {
 
         <section
           id='midias'
-          className='flex flex-col relative items-center gap-40 w-full min-h-160 bg-white pt-20 pb-52 px-40 '
+          className='flex flex-col items-center relative w-full min-h-[40rem] bg-white py-36 px-4 md:px-20 lg:px-40 gap-20 md:gap-40'
         >
-          <Title title={'Mídias Sociais'} />
-          <div className='flex gap-32 w-full'>
-            <div className='flex flex-col justify-center items-center gap-10 w-1/2 relative'>
-              <div className='absolute top-12 right-28 w-104 h-80 bg-pink-100 rounded-3xl'></div>
-              <div className='flex flex-col gap-6 justify-center items-center w-104 h-80 bg-pink-300 rounded-3xl p-10 relative z-10'>
-                <span className='text-white text-4xl text-center'>
+          <Title title='Mídias Sociais' />
+
+          {/* Bloco Instagram */}
+          <div className='flex flex-col md:flex-row gap-16 md:gap-32 w-full'>
+            <div className='flex flex-col justify-center items-center gap-10 w-full md:w-1/2 relative'>
+              <div className='absolute top-6 md:top-12 right-10 md:right-28 w-80 md:w-104 h-60 md:h-80 bg-pink-100 rounded-3xl'></div>
+              <div className='flex flex-col gap-6 justify-center items-center w-80 md:w-104 h-60 md:h-80 bg-pink-300 rounded-3xl p-6 md:p-10 relative z-10'>
+                <span className='text-white text-lg md:text-2xl text-center'>
                   Para ficar informado e atualizado sobre as novidades da
                   clínica, siga nossa página no Instagram!
                 </span>
                 <Link
-                  href={
-                    'https://www.instagram.com/draandreavieiramartins?igsh=b3RzY3phNWNwcnpt'
-                  }
+                  href='https://www.instagram.com/draandreavieiramartins?igsh=b3RzY3phNWNwcnpt'
                   target='_blank'
-                  className='text-darker-pink text-3xl underline underline-offset-8'
+                  className='text-darker-pink text-base md:text-xl underline underline-offset-4 md:underline-offset-8'
                 >
                   Clique aqui para seguir.
                 </Link>
               </div>
             </div>
 
-            <div className=' flex flex-col  justify-center items-center  w-1/2'>
-              <div className='flex flex-col gap-10'>
-                <div className='flex flex-col'>
-                  <span className='text-pink-grad-40 text-6xl font-semibold'>
+            <div className='flex flex-col justify-center items-center w-full md:w-1/2'>
+              <div className='flex flex-col gap-6 md:gap-10'>
+                <div className='flex flex-col text-center md:text-left'>
+                  <span className='text-pink-grad-40 text-3xl md:text-5xl font-semibold'>
                     30 anos
                   </span>
-                  <span className='text-3xl'>
+                  <span className='text-lg md:text-2xl'>
                     de trajetória profissional
                   </span>
                 </div>
-                <div className='flex flex-col'>
-                  <span className='text-pink-grad-40 text-6xl font-semibold'>
+                <div className='flex flex-col text-center md:text-left'>
+                  <span className='text-pink-grad-40 text-3xl md:text-5xl font-semibold'>
                     5k+
                   </span>
-                  <span className='text-3xl'>seguidores no Instagram</span>
+                  <span className='text-lg md:text-2xl'>
+                    seguidores no Instagram
+                  </span>
                 </div>
-                <div className='flex flex-col'>
-                  <span className='text-pink-grad-40 text-6xl font-semibold'>
+                <div className='flex flex-col text-center md:text-left'>
+                  <span className='text-pink-grad-40 text-3xl md:text-5xl font-semibold'>
                     ∞+
                   </span>
-                  <span className='text-3xl'>sorrisos garantidos</span>
+                  <span className='text-lg md:text-2xl'>
+                    sorrisos garantidos
+                  </span>
                 </div>
               </div>
             </div>
           </div>
-          <div className='flex gap-32 w-full'>
-            <div className='flex flex-col justify-center items-center gap-10 w-1/2 '>
-              <div className='w-full max-w-xl aspect-video'>
+
+          {/* Bloco YouTube */}
+          <div className='flex flex-col md:flex-row gap-16 md:gap-32 w-full'>
+            <div className='flex justify-center items-center w-full md:w-1/2'>
+              <div className='w-full max-w-md md:max-w-xl aspect-video'>
                 <iframe
-                  width='100%'
-                  height='100%'
+                  className='w-full h-full rounded-lg'
                   src='https://www.youtube.com/embed/6rHvNb5QQiw?si=aS2r6q17HtwGDVNw'
                   title='YouTube video player'
-                  frameborder='0'
+                  frameBorder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                  referrerpolicy='strict-origin-when-cross-origin'
-                  allowfullscreen
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
 
-            <div className=' flex flex-col justify-center items-center w-1/2 gap-20'>
-              <span className='text-4xl text-dark-pink text-wrap text-center w-104'>
+            <div className='flex flex-col justify-center items-center w-full md:w-1/2 gap-12'>
+              <span className='text-lg md:text-2xl lg:text-4xl text-dark-pink text-center max-w-md'>
                 <b>Inscreva-se no meu canal</b> do YouTube e acompanhe
                 conteúdos atualizados sobre odontologia.
               </span>
 
-              <div className='flex flex-col gap-6 justify-center items-center w-104 box-border bg-dark-pink rounded-3xl p-10 relative z-10'>
-                <span className='text-white text-3xl text-center font-semibold'>
+              <div className='flex flex-col gap-4 md:gap-6 justify-center items-center w-80 md:w-104 bg-dark-pink rounded-3xl p-6 md:p-10 relative z-10'>
+                <span className='text-white text-base md:text-xl text-center font-semibold'>
                   Siga o nosso blog para saber mais sobre os procedimentos
-                  as inovações da clínica!
+                  e as inovações da clínica!
                 </span>
                 <Link
-                  href={
-                    'https://www.instagram.com/draandreavieiramartins?igsh=b3RzY3phNWNwcnpt'
-                  }
+                  href='https://www.instagram.com/draandreavieiramartins?igsh=b3RzY3phNWNwcnpt'
                   target='_blank'
-                  className='text-white font text-2xl underline underline-offset-8'
+                  className='text-white text-sm md:text-lg underline underline-offset-4 md:underline-offset-8'
                 >
                   Clique aqui para seguir.
                 </Link>
@@ -337,7 +343,7 @@ export default function Home() {
         {/* Onde Atendemos */}
 
         <section
-          className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-40 py-20 pb-40 relative'
+          className='flex flex-col justify-center w-full min-h-160 bg-light-pink gap-10 px-4 md:px-40 py-20 pb-40 relative'
           id='localizacao'
         >
           <div className='bg-border-light-pink bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
@@ -347,11 +353,11 @@ export default function Home() {
 
         {/* Mapa */}
 
-        <section className='flex flex-col justify-center w-full min-h-160 bg-white gap-10 px-40 py-20 pb-20 relative'>
-          <div className='bg-border-white bg-no-repeat h-40 w-full absolute -top-40 right-0 bg-cover' />
+        <section className='flex flex-col justify-center w-full min-h-160 bg-white gap-10 px-4 md:px-40 py-20 pb-20 relative'>
+          <div className='bg-border-white bg-no-repeat h-40 w-full absolute -top-36 right-0 bg-cover' />
 
           <div className='flex flex-col items-center min-h-160'>
-            <span className='text-darker-pink text-3xl'>
+            <span className='text-darker-pink text-2xl md:text-3xl'>
               Rua Dona Laura nº 354 - Sala 506 - Bairro Moinhos de Vento -
               Porto Alegre - RS
             </span>
