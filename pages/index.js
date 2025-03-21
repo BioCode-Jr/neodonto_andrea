@@ -120,7 +120,12 @@ export default function Home() {
                       secondLabel='Venha conversar conosco!'
                       variant={'secondary'}
                       icon={<WhatsApp fontSize='large' />}
-                      onClick={() => alert('Clicou')}
+                      onClick={() => {
+                        window.open(
+                          'https://wa.me/5551989016197',
+                          '_blank'
+                        )
+                      }}
                     />
                   </div>
                 </div>
